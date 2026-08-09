@@ -114,13 +114,13 @@ export default function Skills() {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold text-center mb-16"
       >
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500">
+        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
           {t("sections.skills")}
         </span>
       </motion.h2>
 
       <motion.div
-        className="bg-white/50 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-xl p-8 backdrop-blur-md hover:border-cyan-400/30 transition-all shadow-xl dark:shadow-2xl"
+        className="bg-white/50 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-xl p-8 backdrop-blur-md hover:border-violet-400/30 transition-all shadow-xl dark:shadow-2xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -138,7 +138,7 @@ export default function Skills() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-xl font-semibold text-cyan-400 mb-6"
+                className="text-xl font-semibold text-violet-400 mb-6"
               >
                 {category.titleKey === "Languages" ? category.titleKey : (t(`skills.${category.name}`) || category.titleKey)}
               </motion.h3>
@@ -203,7 +203,17 @@ export default function Skills() {
                       </>
                     ) : (
                       <>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-blue-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        <motion.div
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-violet-500/30 blur-[20px] rounded-full pointer-events-none"
+                          animate={{ opacity: [0.08, 0.28, 0.08] }}
+                          transition={{
+                            duration: 2.4 + (index % 5) * 0.35,
+                            repeat: Number.POSITIVE_INFINITY,
+                            ease: "easeInOut",
+                            delay: (index % 7) * 0.3,
+                          }}
+                          whileHover={{ opacity: 0.9 }}
+                        />
                         <div className="w-12 h-12 relative flex items-center justify-center z-10">
                           {/* Check if it's an emoji (flag) or URL */}
                           {item.icon.startsWith("http") ? (

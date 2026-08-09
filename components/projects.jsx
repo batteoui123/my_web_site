@@ -6,6 +6,7 @@ import { Github, ExternalLink, ChevronDown, ChevronUp, Puzzle, Users, Mic, Light
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useState } from "react"
+import TiltCard from "@/components/tilt-card"
 
 const projectsData = [
   {
@@ -157,16 +158,16 @@ export default function Projects() {
     if (role.includes("Backend") || role.includes("Java")) return "text-emerald-600 dark:text-emerald-400"
     if (role.includes("Frontend") || role.includes("Front-End")) return "text-purple-600 dark:text-purple-400"
     if (role.includes("Full Stack")) return "text-pink-600 dark:text-pink-400"
-    return "text-cyan-600 dark:text-cyan-400"
+    return "text-violet-600 dark:text-violet-400"
   }
 
   return (
     <section id="projects" className="py-16 md:py-28 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent pointer-events-none" />
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 relative z-10">
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500">
+        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
           {t("sections.projects")}
         </span>
       </h2>
@@ -191,7 +192,7 @@ export default function Projects() {
           </div>
 
           <div className="flex items-center gap-3 group">
-            <div className="p-3 rounded-full bg-blue-500/10 text-cyan-500 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
+            <div className="p-3 rounded-full bg-violet-500/10 text-violet-500 group-hover:bg-violet-500/20 group-hover:scale-110 transition-all duration-300">
               <Lightbulb className="w-8 h-8" />
             </div>
             <span className="font-bold text-lg md:text-xl">
@@ -210,10 +211,11 @@ export default function Projects() {
 
       <div className="bg-white/50 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-2xl p-6 md:p-10 backdrop-blur-md shadow-xl dark:shadow-2xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {projectsData.slice(0, visibleCount).map((project) => (
-            <div
+          {projectsData.slice(0, visibleCount).map((project, index) => (
+            <TiltCard
               key={project.id}
-              className="group border border-border/50 rounded-xl overflow-hidden bg-background/40 hover:bg-background/60 hover:border-cyan-400/50 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 flex flex-col h-full transform hover:-translate-y-1"
+              index={index}
+              className="border border-border/50 rounded-xl overflow-hidden bg-background/40 hover:bg-background/60 hover:border-violet-400/50 transition-colors duration-300 shadow-lg hover:shadow-violet-500/20 flex flex-col h-full"
             >
               {/* Project Image - 16:9 Aspect Ratio */}
               <div className="relative aspect-video w-full overflow-hidden border-b border-border/50">
@@ -226,10 +228,10 @@ export default function Projects() {
                 {/* Permanent Discrete Overlay */}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
 
-                <div className="absolute inset-0 bg-cyan-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                <div className="absolute inset-0 bg-violet-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                   <Button
                     size="lg"
-                    className="gap-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold shadow-lg shadow-cyan-500/50 rounded-full"
+                    className="gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold shadow-lg shadow-violet-500/50 rounded-full"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -243,7 +245,7 @@ export default function Projects() {
               {/* Project Content */}
               <div className="p-5 flex flex-col flex-grow relative">
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                     {language === "fr" ? project.titleFr : project.titleEn}
                   </h3>
                   <p className={`text-sm font-semibold mb-2 ${getRoleColor(project.roleEn)}`}>
@@ -253,14 +255,14 @@ export default function Projects() {
                   <div className={`h-1 w-12 rounded-full bg-gradient-to-r ${project.roleEn.includes("DevOps") ? "from-blue-400 to-blue-600" :
                     project.roleEn.includes("Backend") || project.roleEn.includes("Java") ? "from-emerald-400 to-emerald-600" :
                       project.roleEn.includes("Frontend") || project.roleEn.includes("Front-End") ? "from-purple-400 to-purple-600" :
-                        "from-cyan-400 to-blue-500"
+                        "from-violet-400 to-fuchsia-600"
                     }`} />
                 </div>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500/20 border-cyan-500/20 px-2 py-0.5 text-xs">
+                    <Badge key={tag} variant="secondary" className="bg-violet-500/10 text-violet-700 dark:text-violet-300 hover:bg-violet-500/20 border-violet-500/20 px-2 py-0.5 text-xs">
                       {tag}
                     </Badge>
                   ))}
@@ -274,7 +276,7 @@ export default function Projects() {
                 <div className="mt-auto pt-4 flex gap-4 border-t border-border/30">
                   <Button
                     variant="outline"
-                    className="flex-1 border-cyan-600/50 dark:border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+                    className="flex-1 border-violet-600/50 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-500 hover:text-white hover:border-violet-500 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(168,85,247,0.5)] transition-all duration-200"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -284,7 +286,7 @@ export default function Projects() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex-1 border-cyan-600/50 dark:border-cyan-400 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+                    className="flex-1 border-violet-600/50 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-500 hover:text-white hover:border-violet-500 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(168,85,247,0.5)] transition-all duration-200"
                     asChild
                   >
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
@@ -294,7 +296,7 @@ export default function Projects() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
 
@@ -305,7 +307,7 @@ export default function Projects() {
               onClick={handleSeeMore}
               variant="outline"
               size="lg"
-              className="border-cyan-600/50 dark:border-cyan-400/50 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-300 rounded-full px-8"
+              className="border-violet-600/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 hover:bg-violet-400/10 hover:shadow-[0_0_20px_rgba(167,139,250,0.2)] transition-all duration-300 rounded-full px-8"
             >
               {t("projects.see_more")}
               <ChevronDown className="ml-2 h-4 w-4 animate-bounce" />
@@ -316,7 +318,7 @@ export default function Projects() {
                 onClick={handleShowLess}
                 variant="outline"
                 size="lg"
-                className="border-cyan-600/50 dark:border-cyan-400/50 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-300 rounded-full px-8"
+                className="border-violet-600/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 hover:bg-violet-400/10 hover:shadow-[0_0_20px_rgba(167,139,250,0.2)] transition-all duration-300 rounded-full px-8"
               >
                 {t("projects.see_less")}
                 <ChevronUp className="ml-2 h-4 w-4 animate-bounce" />

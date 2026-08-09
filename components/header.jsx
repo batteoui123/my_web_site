@@ -9,7 +9,7 @@ import { useCallback, useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
-const navItems = ["aboutMe", "skills", "education", "certifications", "projects", "contact"]
+const navItems = ["aboutMe", "skills", "education", "experience", "certifications", "projects", "contact"]
 
 export default function Header() {
   const { language, setLanguage, t } = useTranslation()

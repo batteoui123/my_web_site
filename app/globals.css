@@ -151,9 +151,22 @@
   @apply transition-colors duration-300;
 }
 
+@keyframes shimmer-sweep {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer-sweep 4s linear infinite;
+}
+
 .logo {
   font-family: var(--font-great-vibes), cursive, sans-serif;
-  background: linear-gradient(90deg, #4cc0f5, #36c0f0);
+  background: linear-gradient(90deg, #a855f7, #d946ef);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

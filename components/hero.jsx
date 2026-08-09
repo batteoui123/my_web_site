@@ -79,10 +79,64 @@ export default function Hero() {
   }
 
   return (
-    <section id="aboutMe" className="py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative overflow-hidden">
+    <section id="intro" className="py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative overflow-hidden">
       <StarBackground />
 
-      {/* Left Content */}
+      {/* Left - Profile Photo (frame-break effect) */}
+      <motion.div
+        variants={imageVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex justify-center items-center relative z-10"
+      >
+        <motion.div
+          className="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center"
+          animate={{ y: [0, -18, 0] }}
+          transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+        >
+          {/* Ambient Glow - follows the blob shape */}
+          <motion.div
+            className="absolute w-56 h-56 md:w-72 md:h-72 translate-y-6 bg-violet-400 blur-[70px]"
+            animate={{
+              opacity: [0.35, 0.55, 0.35],
+              borderRadius: [
+                "75% 25% 65% 35% / 35% 65% 35% 65%",
+                "30% 70% 40% 60% / 65% 30% 70% 35%",
+                "75% 25% 65% 35% / 35% 65% 35% 65%",
+              ],
+            }}
+            transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+          />
+
+          {/* Single blob-shaped contour - outline only, glow does the coloring */}
+          <motion.div
+            className="absolute w-56 h-56 md:w-72 md:h-72 -translate-x-2 translate-y-8 border-[3px] border-violet-400 shadow-[0_0_45px_5px_rgba(168,85,247,0.45)]"
+            animate={{
+              borderRadius: [
+                "75% 25% 65% 35% / 35% 65% 35% 65%",
+                "30% 70% 40% 60% / 65% 30% 70% 35%",
+                "40% 60% 30% 70% / 70% 40% 60% 30%",
+                "75% 25% 65% 35% / 35% 65% 35% 65%",
+              ],
+            }}
+            transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+          />
+
+          {/* Photo - head breaks out above, body contained within the blob, fades at the bottom */}
+          <img
+            src="/profile.png"
+            alt="Profile"
+            style={{
+              WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 96%)",
+              maskImage: "linear-gradient(to bottom, black 60%, transparent 96%)",
+            }}
+            className="relative z-10 w-48 md:w-60 h-auto object-contain drop-shadow-[0_20px_35px_rgba(139,92,246,0.45)] hover:scale-105 transition-transform duration-500"
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Right - Text Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -90,19 +144,24 @@ export default function Hero() {
         viewport={{ once: true, amount: 0.3 }}
         className="relative z-10"
       >
-        <motion.div variants={itemVariants} className="mb-6">
-          <h1 className="text-5xl md:text-6xl font-bold mb-3">
-            <span className="text-cyan-400">EL-</span>BATTÉOUI
-            <br />
-            OUSSAMA
-          </h1>
-          <motion.div variants={itemVariants} className="text-cyan-400 text-xl font-semibold flex items-center gap-2 h-8">
-            <span>{"<"}</span>
-            <span>{text}</span>
-            <span className="animate-pulse">|</span>
-            <span>{">"}</span>
-          </motion.div>
+        <motion.p variants={itemVariants} className="text-muted-foreground text-lg mb-2">
+          {t("hero.greeting")}
+        </motion.p>
+
+        <motion.h1 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-3 text-foreground whitespace-nowrap">
+          EL-BATTÉOUI OUSSAMA
+        </motion.h1>
+
+        <motion.div variants={itemVariants} className="text-lg md:text-xl font-semibold mb-6 flex flex-wrap items-center gap-2">
+          <span className="text-foreground">{t("hero.rolePrefix")}</span>
+          <span className="text-violet-400">{text}</span>
+          <span className="text-violet-400 animate-pulse">|</span>
         </motion.div>
+
+        {/* Tagline */}
+        <motion.p variants={itemVariants} className="text-sm md:text-base text-muted-foreground mb-8 max-w-md leading-relaxed">
+          {t("hero.tagline")}
+        </motion.p>
 
         {/* Social Links */}
         <motion.div variants={itemVariants} className="flex gap-3 mb-8">
@@ -116,7 +175,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full border-muted-foreground hover:border-cyan-400 hover:text-cyan-400 bg-transparent"
+                className="rounded-full border-muted-foreground hover:border-violet-400 hover:text-violet-400 bg-transparent"
                 asChild
               >
                 <a href={item.href} target="_blank" rel="noopener noreferrer">
@@ -127,25 +186,10 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Bio */}
-        <motion.div variants={itemVariants} className="text-sm md:text-base text-muted-foreground mb-6 leading-relaxed">
-          {t("hero.description").split('\n').map((line, index) => (
-            <span key={index} className="block min-h-[1.5em]">
-              {line}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* Technologies */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-sm font-semibold text-foreground mb-2">{t("hero.technologies")}</p>
-          <p className="text-sm text-muted-foreground">Java,Spring Boot, React, Next.js,CI/CD</p>
-        </motion.div>
-
         {/* CTA Buttons */}
         <motion.div variants={itemVariants} className="flex gap-3 flex-wrap">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-cyan-400 text-black hover:bg-cyan-300 rounded-lg" asChild>
+            <Button className="bg-violet-500 text-white hover:bg-violet-400 rounded-lg" asChild>
               <a href="#contact">
                 <Mail className="h-4 w-4 mr-2" />
                 {t("cta.contact")}
@@ -155,7 +199,7 @@ export default function Hero() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               variant="outline"
-              className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 rounded-lg bg-transparent"
+              className="border-violet-400/50 text-violet-400 hover:bg-violet-400/10 rounded-lg bg-transparent"
               asChild
             >
               <a
@@ -170,49 +214,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </motion.div>
-
-      {/* Right Content - Profile Image */}
-      <motion.div
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="flex justify-center items-center relative z-10"
-      >
-        <motion.div
-          className="relative w-64 h-64 md:w-80 md:h-80"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-        >
-          {/* Glowing Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-[80px] opacity-40 animate-pulse"></div>
-
-          {/* Main Circle Container */}
-          <div className="relative w-full h-full p-1 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-[length:200%_auto] animate-shine">
-            {/* Inner Background */}
-            <div className="relative w-full h-full rounded-full bg-background/80 backdrop-blur-sm overflow-hidden flex items-end justify-center">
-
-              {/* Subtle Inner Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-cyan-500/20"></div>
-
-              {/* Grid Pattern Overlay */}
-              <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-
-              {/* Profile Image */}
-              <img
-                src="/profile.png"
-                alt="Profile"
-                className="relative w-full h-full object-cover object-bottom transform translate-y-2 hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-          </div>
-
-          {/* Floating Elements (Optional decoration) */}
-          <div className="absolute -top-4 -right-4 w-12 h-12 bg-cyan-500/20 rounded-full blur-xl animate-bounce delay-700"></div>
-          <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-bounce delay-300"></div>
-        </motion.div>
-      </motion.div>
     </section>
   )
 }
-

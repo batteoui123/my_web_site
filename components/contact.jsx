@@ -86,7 +86,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 md:py-28">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500">
+        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
           {t("sections.contact")}
         </span>
       </h2>
@@ -96,30 +96,30 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="md:col-span-1 space-y-6">
             <div className="flex items-start gap-4">
-              <Mail className="h-6 w-6 text-cyan-600 dark:text-cyan-400 mt-1 flex-shrink-0" />
+              <Mail className="h-6 w-6 text-violet-600 dark:text-violet-400 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-sm text-muted-foreground">{t("contact.email")}</p>
-                <a href="mailto:oussama.batteoui.dev@gmail.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300">
+                <a href="mailto:oussama.batteoui.dev@gmail.com" className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300">
                   oussama.batteoui.dev@gmail.com
                 </a>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="h-6 w-6 text-cyan-600 dark:text-cyan-400 mt-1 flex-shrink-0" />
+              <Phone className="h-6 w-6 text-violet-600 dark:text-violet-400 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-sm text-muted-foreground">{t("contact.phone")}</p>
-                <a href="tel:+212654579050" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300">
+                <a href="tel:+212654579050" className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300">
                   +212 654-579050
                 </a>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin className="h-6 w-6 text-cyan-600 dark:text-cyan-400 mt-1 flex-shrink-0" />
+              <MapPin className="h-6 w-6 text-violet-600 dark:text-violet-400 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-sm text-muted-foreground">{t("contact.location")}</p>
-                <p className="text-cyan-600 dark:text-cyan-400">Tangier, Morocco</p>
+                <p className="text-violet-600 dark:text-violet-400">Tangier, Morocco</p>
               </div>
             </div>
           </div>
@@ -131,14 +131,14 @@ export default function Contact() {
                 placeholder={t("contact.form.name")}
                 value={formDetails.name}
                 onChange={(e) => onFormUpdate("name", e.target.value)}
-                className="bg-black/5 dark:bg-black/20 border-black/10 dark:border-white/10 focus:border-cyan-600 dark:focus:border-cyan-400 placeholder:text-muted-foreground/50"
+                className="bg-black/5 dark:bg-black/20 border-black/10 dark:border-white/10 focus:border-violet-600 dark:focus:border-violet-400 focus-visible:ring-violet-400/50 focus:shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-shadow duration-300 placeholder:text-muted-foreground/50"
               />
               <Input
                 type="email"
                 placeholder={t("contact.form.email")}
                 value={formDetails.email}
                 onChange={(e) => onFormUpdate("email", e.target.value)}
-                className="bg-black/5 dark:bg-black/20 border-black/10 dark:border-white/10 focus:border-cyan-600 dark:focus:border-cyan-400 placeholder:text-muted-foreground/50"
+                className="bg-black/5 dark:bg-black/20 border-black/10 dark:border-white/10 focus:border-violet-600 dark:focus:border-violet-400 focus-visible:ring-violet-400/50 focus:shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-shadow duration-300 placeholder:text-muted-foreground/50"
               />
             </div>
 
@@ -147,14 +147,14 @@ export default function Contact() {
               rows={5}
               value={formDetails.message}
               onChange={(e) => onFormUpdate("message", e.target.value)}
-              className="bg-black/5 dark:bg-black/20 border-black/10 dark:border-white/10 focus:border-cyan-600 dark:focus:border-cyan-400 placeholder:text-muted-foreground/50"
+              className="bg-black/5 dark:bg-black/20 border-black/10 dark:border-white/10 focus:border-violet-600 dark:focus:border-violet-400 focus-visible:ring-violet-400/50 focus:shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-shadow duration-300 placeholder:text-muted-foreground/50"
             />
 
             <div className="flex items-center gap-4">
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 bg-cyan-400 text-black hover:bg-cyan-300 rounded-lg font-medium"
+                className="flex-1 bg-violet-500 text-white hover:bg-violet-400 rounded-lg font-medium"
               >
                 {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
               </Button>

@@ -47,7 +47,7 @@ export default function Footer() {
         <motion.div variants={itemVariants} className="text-center mb-6">
           <a
             href="mailto:oussama.batteoui.dev@gmail.com"
-            className="flex items-center justify-center gap-2 text-muted-foreground hover:text-cyan-400 transition-colors group"
+            className="flex items-center justify-center gap-2 text-muted-foreground hover:text-violet-400 transition-colors group"
           >
             <Mail className="h-4 w-4 group-hover:animate-bounce" />
             <span className="text-sm font-medium">oussama.batteoui.dev@gmail.com</span>
@@ -65,7 +65,7 @@ export default function Footer() {
               whileHover={{ scale: 1.2, rotate: 10 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="text-muted-foreground hover:text-cyan-400 transition-colors"
+              className="text-muted-foreground hover:text-violet-400 transition-colors"
               aria-label={item.label}
             >
               <item.Icon className="h-5 w-5" />
@@ -87,7 +87,13 @@ export default function Footer() {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="logo text-lg font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent italic">
+          <p
+            className="logo text-lg font-bold bg-clip-text text-transparent italic bg-[length:200%_auto] animate-shimmer"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #a78bfa, #e879f9, #ffffff, #a855f7, #a78bfa)",
+            }}
+          >
             El batteoui oussama
           </p>
         </motion.div>

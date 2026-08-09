@@ -4,8 +4,10 @@ import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import Header from "@/components/header"
 import Hero from "@/components/hero"
+import AboutMe from "@/components/about-me"
 import Skills from "@/components/skills"
 import Education from "@/components/education"
+import Experience from "@/components/experience"
 import Projects from "@/components/projects"
 import Certifications from "@/components/certifications"
 import Contact from "@/components/contact"
@@ -26,8 +28,10 @@ export default function Page() {
       <Header />
       <main className="w-full max-w-7xl mx-auto px-4 py-8">
         <Hero />
+        <AboutMe />
         <Skills />
         <Education />
+        <Experience />
         <Projects />
         <Certifications />
         <Contact />

@@ -8,22 +8,45 @@ const translations = {
     "nav.aboutMe": "About me",
     "nav.skills": "Skills",
     "nav.education": "Education",
+    "nav.experience": "Experience",
     "nav.certifications": "Certifications",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
 
-    // Hero
-    "hero.description":
-      "👨‍💻 As a Software Engineering student, I craft Full-Stack web solutions where performance, reliability, and user experience meet. Passionate about modern software architecture, I rely on a solid mastery of\n💻 Java, Spring Boot, React, Next.js, Laravel\nto design robust and elegant applications.\n\n🔧 Technical Approach & DevOps\nMy approach combines rigor, attention to detail, and DevOps practices:\n⚙️ Continuous Integration (CI/CD)\n🐳 Automated deployment with Docker\n📦 Containerized and reproducible environments\n\n🌱 Curious and continuously improving, I love exploring new tools, optimizing performance, and tackling complex technical challenges.\n\n🎯 Objective\nI am looking for a PFE internship (4–6 months) where I can:\n🚀 leverage my skills,\n🤝 learn from experienced teams,\n🌍 contribute to ambitious and innovative projects that shape the web of tomorrow.",
-    "hero.technologies": "Technologies & Frameworks",
-    "hero.role1": "Software Engineering Student",
+    // Hero (intro section)
+    "hero.greeting": "Hello, I'm",
+    "hero.rolePrefix": "And I'm a",
+    "hero.tagline":
+      "I build full-stack web experiences where clean code meets great design — from backend APIs to polished, DevOps-ready deployments.",
+    "hero.role1": "Software Engineer",
     "hero.role2": "Web & Full-stack Developer",
     "cta.contact": "Contact me",
     "cta.download": "Download CV",
 
+    // About Me section
+    "about.intro.line2":
+      "I don't just write code — I design systems. From architecture modeling to automated deployment, I build web applications that are robust, scalable, and user-focused.",
+    "about.card1.title": "Architecture First",
+    "about.card1.desc":
+      "I choose the approach that fits the business need — structured monolith or distributed microservices — to keep codebases scalable and maintainable.",
+    "about.card2.title": "Full-Stack & AI",
+    "about.card2.desc":
+      "Building secure APIs and modern interfaces, enhanced with AI tooling to solve complex problems.",
+    "about.card3.title": "\"Ship It\" Culture",
+    "about.card3.desc":
+      "My work doesn't stop at local code. I use my DevOps foundations — Docker, CI/CD — to containerize and harden production releases.",
+    "about.objective":
+      "I'm now looking for a full-time Software Engineering role where I can keep building scalable systems with solid DevOps practices.",
+    "about.stats.projects": "Completed Projects",
+    "about.stats.technologies": "Technologies Mastered",
+    "about.stats.experience": "Years of Coding",
+
     // Sections
+    "sections.aboutMe": "About Me",
     "sections.skills": "Skills",
     "sections.education": "Education",
+    "sections.experience": "Experience",
+    "experience.present": "Present",
     "sections.projects": "Projects",
     "sections.certifications": "Certifications",
     "certifications.verify": "Verify Credential",
@@ -66,22 +89,45 @@ const translations = {
     "nav.aboutMe": "À propos",
     "nav.skills": "Compétences",
     "nav.education": "Formation",
+    "nav.experience": "Expérience",
     "nav.certifications": "Certifications",
     "nav.projects": "Projets",
     "nav.contact": "Contact",
 
-    // Hero
-    "hero.description":
-      "👨‍💻 Élève ingénieur en génie informatique, je façonne des solutions web Full-Stack où performance, fiabilité et expérience utilisateur se rencontrent. Passionné par l’architecture logicielle moderne, je m’appuie sur une maîtrise solide de\n💻 Java, Spring Boot, React, Next.js, Laravel\npour concevoir des applications robustes et élégantes.\n\n🔧 Approche technique & DevOps\nMa démarche combine rigueur, sens du détail et pratiques DevOps :\n⚙️ Intégration continue (CI/CD)\n🐳 Déploiement automatisé avec Docker\n📦 Environnements conteneurisés et reproductibles\n\n🌱 Curieux et en amélioration continue, j’aime explorer de nouveaux outils, optimiser les performances et relever des défis techniques complexes.\n\n🎯 Objectif\nJe recherche un stage PFE (4–6 mois) où je pourrai :\n🚀 mettre à profit mes compétences,\n🤝 apprendre au contact d’équipes expérimentées,\n🌍 contribuer à des projets ambitieux et innovants qui façonnent le web de demain.",
-    "hero.technologies": "Technologies & Frameworks",
-    "hero.role1": "Élève Ingénieur Logiciel",
+    // Hero (intro section)
+    "hero.greeting": "Bonjour, je suis",
+    "hero.rolePrefix": "Et je suis",
+    "hero.tagline":
+      "Je conçois des expériences web full-stack où code propre et bon design se rencontrent — des API backend aux déploiements prêts pour le DevOps.",
+    "hero.role1": "Ingénieur Logiciel",
     "hero.role2": "Développeur Web & Full Stack",
     "cta.contact": "Contactez-moi",
     "cta.download": "Télécharger CV",
 
+    // About Me section
+    "about.intro.line2":
+      "Je ne me contente pas d'écrire du code : je conçois des systèmes. De la modélisation de l'architecture jusqu'au déploiement automatisé, je construis des applications web robustes, scalables et centrées sur l'utilisateur.",
+    "about.card1.title": "Architecture d'abord",
+    "about.card1.desc":
+      "Je choisis l'approche adaptée au besoin métier — monolithe structuré ou microservices distribués — pour garantir des bases de code évolutives et maintenables.",
+    "about.card2.title": "Full-Stack & IA",
+    "about.card2.desc":
+      "Réalisation d'API sécurisées et d'interfaces modernes, enrichies par l'intégration d'outils IA pour résoudre des problèmes complexes.",
+    "about.card3.title": "Culture du \"Ship It\"",
+    "about.card3.desc":
+      "Mon travail ne s'arrête pas au code local. J'utilise mes bases DevOps — Docker, CI/CD — pour conteneuriser et fiabiliser les mises en production.",
+    "about.objective":
+      "Je recherche aujourd'hui un poste à temps plein en ingénierie logicielle où je pourrai continuer à construire des systèmes scalables avec de solides pratiques DevOps.",
+    "about.stats.projects": "Projets Réalisés",
+    "about.stats.technologies": "Technologies Maîtrisées",
+    "about.stats.experience": "Années de Code",
+
     // Sections
+    "sections.aboutMe": "À propos de moi",
     "sections.skills": "Compétences",
     "sections.education": "Formation",
+    "sections.experience": "Expérience",
+    "experience.present": "Présent",
     "sections.projects": "Projets",
     "sections.certifications": "Certifications",
     "certifications.verify": "Vérifier le diplôme",
