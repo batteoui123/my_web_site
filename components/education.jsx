@@ -61,11 +61,13 @@ export default function Education() {
   return (
     <section id="education" className="py-16 md:py-28 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/5 to-transparent pointer-events-none" />
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 relative z-10">
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
+        <span className="text-foreground">
+          <span className="font-black text-[0.55em] align-middle mr-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
           {t("sections.education")}
+          <span className="font-black text-[0.55em] align-middle ml-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
         </span>
       </h2>
 
@@ -75,7 +77,7 @@ export default function Education() {
           <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-border/40" />
           {/* Vertical line - draws in as you scroll */}
           <motion.div
-            className="absolute left-3 top-0 bottom-0 w-0.5 origin-top bg-gradient-to-b from-violet-400 to-fuchsia-500"
+            className="absolute left-3 top-0 bottom-0 w-0.5 origin-top bg-gradient-to-b from-[#6366F1] to-[#6366F1]"
             style={{ scaleY: lineProgress }}
           />
 
@@ -87,22 +89,22 @@ export default function Education() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-500 border-4 border-card flex items-center justify-center shadow-lg shadow-violet-500/20 z-10"
+                className="absolute -left-8 top-1 w-6 h-6 rounded-full bg-gradient-to-r from-[#6366F1] to-[#6366F1] border-4 border-card flex items-center justify-center shadow-lg shadow-[#6366F1]/20 z-10"
               >
                 <motion.span
                   initial={{ scale: 0.5, opacity: 0.7 }}
                   whileInView={{ scale: 2.4, opacity: 0 }}
                   viewport={{ once: true, amount: 0.6 }}
                   transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
-                  className="absolute inset-0 rounded-full bg-violet-400"
+                  className="absolute inset-0 rounded-full bg-[#7160ED]"
                 />
               </motion.div>
 
               {/* Content */}
               <div className="flex justify-between items-center gap-4 group">
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-violet-400 mb-2">{item.period}</p>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-violet-400 transition-colors">
+                  <p className="text-sm font-semibold text-[#7160ED] mb-2">{item.period}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#7160ED] transition-colors">
                     {language === "fr" ? item.titleFr : item.titleEn}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -111,7 +113,7 @@ export default function Education() {
                 </div>
 
                 {/* Logo Image */}
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white p-1 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300 overflow-hidden border-2 border-violet-400/20">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white p-1 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300 overflow-hidden border-2 border-[#7160ED]/20">
                   <div className="relative w-full h-full rounded-full overflow-hidden">
                     <Image
                       src={item.image}

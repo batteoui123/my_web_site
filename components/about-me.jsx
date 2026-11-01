@@ -11,15 +11,15 @@ const cards = [
     icon: Blocks,
     titleKey: "about.card1.title",
     descKey: "about.card1.desc",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
+    color: "text-[#7160ED]",
+    bg: "bg-[#6366F1]/10",
   },
   {
     icon: Sparkles,
     titleKey: "about.card2.title",
     descKey: "about.card2.desc",
-    color: "text-fuchsia-400",
-    bg: "bg-fuchsia-500/10",
+    color: "text-[#6366F1]",
+    bg: "bg-[#6366F1]/10",
   },
   {
     icon: Rocket,
@@ -31,7 +31,7 @@ const cards = [
 ]
 
 const stats = [
-  { key: "about.stats.projects", value: 8, suffix: "+" },
+  { key: "about.stats.projects", value: 10, suffix: "+" },
   { key: "about.stats.technologies", value: 30, suffix: "+" },
   { key: "about.stats.experience", value: 2, suffix: "+" },
 ]
@@ -52,7 +52,7 @@ function Counter({ value, suffix }) {
   }, [isInView, value])
 
   return (
-    <span ref={ref} className="text-4xl md:text-5xl font-bold text-violet-400">
+    <span ref={ref} className="text-4xl md:text-5xl font-bold text-[#7160ED]">
       {display}
       {suffix}
     </span>
@@ -65,11 +65,13 @@ export default function AboutMe() {
   return (
     <section id="aboutMe" className="py-16 md:py-28 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/5 to-transparent pointer-events-none" />
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 relative z-10">
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
+        <span className="text-foreground">
+          <span className="font-black text-[0.55em] align-middle mr-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
           {t("sections.aboutMe")}
+          <span className="font-black text-[0.55em] align-middle ml-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
         </span>
       </h2>
 

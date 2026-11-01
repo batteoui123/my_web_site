@@ -14,13 +14,13 @@ const projectsData = [
     titleEn: "ElectraCore",
     titleFr: "ElectraCore",
     roleEn: "DevOps Lead",
-    roleFr: "Responsable DevOps",
+    roleFr: "Développeur Full-Stack & DevOps",
     descriptionEn:
       "Microservices e-commerce platform offering product browsing, cart management and secure payment flows, built on a containerized and scalable architecture.",
     descriptionFr:
-      "Plateforme e-commerce en microservices offrant navigation produit, gestion du panier et traitement sécurisé des paiements, basée sur une architecture conteneurisée et évolutive.",
+      "Plateforme e-commerce en microservices (Identity, Product, Cart, Order, Payment) avec paiements PayPal, interface Next.js et déploiement Docker sur DigitalOcean.",
     imgUrl: "/Projects/electracore.jpg",
-    tags: ["Docker", "Docker Compose", "GitHub Actions", "DigitalOcean"],
+    tags: ["Spring Boot", "Next.js", "Docker", "PayPal"],
     github: "#",
     live: "#",
   },
@@ -107,32 +107,16 @@ const projectsData = [
 
   {
     id: 7,
-    titleEn: "Personal Portfolio",
-    titleFr: "Portfolio Personnel",
-    roleEn: "Frontend Developer",
-    roleFr: "Développeur Frontend",
-    descriptionEn:
-      "Interactive React.js portfolio showcasing projects, skills and achievements in a clean and responsive layout.",
-    descriptionFr:
-      "Portfolio interactif développé avec React.js, présentant projets, compétences et réalisations dans une interface propre et responsive.",
-    imgUrl: "/Projects/portfolio.png",
-    tags: ["React", "Bootstrap"],
-    github: "https://github.com/batteoui123/MyPortfolio",
-    live: "#",
-  },
-
-  {
-    id: 8,
     titleEn: "3DXEmbryo",
     titleFr: "3DXEmbryo",
-    roleEn: "Frontend Developer & 3D Modeler",
-    roleFr: "Développeur Front-End & Modélisation 3D",
+    roleEn: "Full Stack Developer & 3D Modeler",
+    roleFr: "Développeur Full Stack & Modélisation 3D",
     descriptionEn:
-      "3D medical model exploration platform featuring real-time visualization, structured model management and an immersive Next.js interface.",
+      "Interactive 3D medical model exploration platform — 3D modeling, a Spring Boot REST API, and an immersive Next.js interface, deployed via Docker and CI/CD.",
     descriptionFr:
-      "Plateforme d’exploration de modèles médicaux en 3D offrant visualisation en temps réel, gestion structurée des modèles et interface immersive en Next.js.",
+      "Plateforme interactive d'exploration de modèles médicaux 3D — modélisation 3D, API REST avec Spring Boot et interface immersive en Next.js, déployée via Docker et CI/CD.",
     imgUrl: "/Projects/3dXembryo.png",
-    tags: ["Next.js", "Three.js", "Tailwind CSS", "Blender", "Docker"],
+    tags: ["Next.js", "Spring Boot", "Three.js", "Tailwind CSS", "Blender", "Docker"],
     github: "#",
     live: "#",
   },
@@ -157,18 +141,20 @@ export default function Projects() {
     if (role.includes("DevOps")) return "text-blue-600 dark:text-blue-400"
     if (role.includes("Backend") || role.includes("Java")) return "text-emerald-600 dark:text-emerald-400"
     if (role.includes("Frontend") || role.includes("Front-End")) return "text-purple-600 dark:text-purple-400"
-    if (role.includes("Full Stack")) return "text-pink-600 dark:text-pink-400"
-    return "text-violet-600 dark:text-violet-400"
+    if (role.includes("Full Stack")) return "text-[#6366F1] dark:text-[#6366F1]"
+    return "text-[#7160ED] dark:text-[#7160ED]"
   }
 
   return (
     <section id="projects" className="py-16 md:py-28 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/5 to-transparent pointer-events-none" />
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 relative z-10">
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
+        <span className="text-foreground">
+          <span className="font-black text-[0.55em] align-middle mr-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
           {t("sections.projects")}
+          <span className="font-black text-[0.55em] align-middle ml-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
         </span>
       </h2>
 
@@ -192,7 +178,7 @@ export default function Projects() {
           </div>
 
           <div className="flex items-center gap-3 group">
-            <div className="p-3 rounded-full bg-violet-500/10 text-violet-500 group-hover:bg-violet-500/20 group-hover:scale-110 transition-all duration-300">
+            <div className="p-3 rounded-full bg-[#6366F1]/10 text-[#6366F1] group-hover:bg-[#6366F1]/20 group-hover:scale-110 transition-all duration-300">
               <Lightbulb className="w-8 h-8" />
             </div>
             <span className="font-bold text-lg md:text-xl">
@@ -201,7 +187,7 @@ export default function Projects() {
           </div>
 
           <div className="flex items-center gap-3 group">
-            <div className="p-3 rounded-full bg-pink-500/10 text-pink-500 group-hover:bg-pink-500/20 group-hover:scale-110 transition-all duration-300">
+            <div className="p-3 rounded-full bg-[#6366F1]/10 text-[#6366F1] group-hover:bg-[#6366F1]/20 group-hover:scale-110 transition-all duration-300">
               <MessageCircle className="w-8 h-8" />
             </div>
             <span className="font-bold text-lg md:text-xl">{t("soft_skills.communication")}</span>
@@ -215,7 +201,7 @@ export default function Projects() {
             <TiltCard
               key={project.id}
               index={index}
-              className="border border-border/50 rounded-xl overflow-hidden bg-background/40 hover:bg-background/60 hover:border-violet-400/50 transition-colors duration-300 shadow-lg hover:shadow-violet-500/20 flex flex-col h-full"
+              className="border border-border/50 rounded-xl overflow-hidden bg-background/40 hover:bg-background/60 hover:border-[#7160ED]/50 transition-colors duration-300 shadow-lg hover:shadow-[#6366F1]/20 flex flex-col h-full"
             >
               {/* Project Image - 16:9 Aspect Ratio */}
               <div className="relative aspect-video w-full overflow-hidden border-b border-border/50">
@@ -228,10 +214,10 @@ export default function Projects() {
                 {/* Permanent Discrete Overlay */}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
 
-                <div className="absolute inset-0 bg-violet-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                <div className="absolute inset-0 bg-[#273188]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                   <Button
                     size="lg"
-                    className="gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold shadow-lg shadow-violet-500/50 rounded-full"
+                    className="gap-2 bg-[#6366F1] hover:bg-[#7160ED] text-white font-semibold shadow-lg shadow-[#6366F1]/50 rounded-full"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -245,7 +231,7 @@ export default function Projects() {
               {/* Project Content */}
               <div className="p-5 flex flex-col flex-grow relative">
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-[#7160ED] dark:group-hover:text-[#7160ED] transition-colors">
                     {language === "fr" ? project.titleFr : project.titleEn}
                   </h3>
                   <p className={`text-sm font-semibold mb-2 ${getRoleColor(project.roleEn)}`}>
@@ -255,14 +241,14 @@ export default function Projects() {
                   <div className={`h-1 w-12 rounded-full bg-gradient-to-r ${project.roleEn.includes("DevOps") ? "from-blue-400 to-blue-600" :
                     project.roleEn.includes("Backend") || project.roleEn.includes("Java") ? "from-emerald-400 to-emerald-600" :
                       project.roleEn.includes("Frontend") || project.roleEn.includes("Front-End") ? "from-purple-400 to-purple-600" :
-                        "from-violet-400 to-fuchsia-600"
+                        "from-[#6366F1] to-[#7160ED]"
                     }`} />
                 </div>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-violet-500/10 text-violet-700 dark:text-violet-300 hover:bg-violet-500/20 border-violet-500/20 px-2 py-0.5 text-xs">
+                    <Badge key={tag} variant="secondary" className="bg-[#6366F1]/10 text-[#6366F1] dark:text-[#9F90E9] hover:bg-[#6366F1]/20 border-[#6366F1]/20 px-2 py-0.5 text-xs">
                       {tag}
                     </Badge>
                   ))}
@@ -276,7 +262,7 @@ export default function Projects() {
                 <div className="mt-auto pt-4 flex gap-4 border-t border-border/30">
                   <Button
                     variant="outline"
-                    className="flex-1 border-violet-600/50 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-500 hover:text-white hover:border-violet-500 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(168,85,247,0.5)] transition-all duration-200"
+                    className="flex-1 border-[#7160ED]/50 dark:border-[#7160ED] text-[#7160ED] dark:text-[#7160ED] hover:bg-[#6366F1] hover:text-white hover:border-[#6366F1] hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(99,102,241,0.5)] transition-all duration-200"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -286,7 +272,7 @@ export default function Projects() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex-1 border-violet-600/50 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-500 hover:text-white hover:border-violet-500 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(168,85,247,0.5)] transition-all duration-200"
+                    className="flex-1 border-[#7160ED]/50 dark:border-[#7160ED] text-[#7160ED] dark:text-[#7160ED] hover:bg-[#6366F1] hover:text-white hover:border-[#6366F1] hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(99,102,241,0.5)] transition-all duration-200"
                     asChild
                   >
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
@@ -307,7 +293,7 @@ export default function Projects() {
               onClick={handleSeeMore}
               variant="outline"
               size="lg"
-              className="border-violet-600/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 hover:bg-violet-400/10 hover:shadow-[0_0_20px_rgba(167,139,250,0.2)] transition-all duration-300 rounded-full px-8"
+              className="border-[#7160ED]/50 dark:border-[#7160ED]/50 text-[#7160ED] dark:text-[#7160ED] hover:bg-[#7160ED]/10 hover:shadow-[0_0_20px_rgba(113,96,237,0.2)] transition-all duration-300 rounded-full px-8"
             >
               {t("projects.see_more")}
               <ChevronDown className="ml-2 h-4 w-4 animate-bounce" />
@@ -318,7 +304,7 @@ export default function Projects() {
                 onClick={handleShowLess}
                 variant="outline"
                 size="lg"
-                className="border-violet-600/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 hover:bg-violet-400/10 hover:shadow-[0_0_20px_rgba(167,139,250,0.2)] transition-all duration-300 rounded-full px-8"
+                className="border-[#7160ED]/50 dark:border-[#7160ED]/50 text-[#7160ED] dark:text-[#7160ED] hover:bg-[#7160ED]/10 hover:shadow-[0_0_20px_rgba(113,96,237,0.2)] transition-all duration-300 rounded-full px-8"
               >
                 {t("projects.see_less")}
                 <ChevronUp className="ml-2 h-4 w-4 animate-bounce" />

@@ -12,7 +12,7 @@ const experienceData = [
   {
     id: 1,
     roleEn: "Full Stack Engineer (Capstone Internship)",
-    roleFr: "Ingénieur Full Stack (Stage PFE)",
+    roleFr: "Ingénieur Full Stack (Stage PFE → Contrat d'insertion)",
     company: "IZEMX",
     logo: "/experience/izemx-logo-1-scaled.png",
     location: "Casablanca-Settat, Maroc",
@@ -22,7 +22,7 @@ const experienceData = [
     descriptionEn:
       "Designing and building a B2B SaaS platform for managing AI agents, delivering the following business and technical modules:",
     descriptionFr:
-      "Conception et développement d'une plateforme SaaS B2B dédiée à la gestion d'agents IA. Réalisation des modules métiers et techniques suivants :",
+      "Conception et développement d'une plateforme SaaS de gestion d'agents IA sur mesure, basée sur une architecture microservices (Java / Spring Boot, React). Modules réalisés :",
     bulletsEn: [
       "Transactions & Usage: Stripe billing/subscriptions integration, plus a credit system to track AI usage.",
       "AI Orchestration: Managing deployed agents via n8n and integrating the LiteLLM proxy.",
@@ -30,12 +30,12 @@ const experienceData = [
       "Security & Access: Internal/external user management with centralized authentication secured by Keycloak.",
     ],
     bulletsFr: [
-      "Transactions & Consommation : intégration de la facturation et des abonnements via Stripe, et création d'un système de crédits pour le suivi de la consommation IA.",
-      "Orchestration IA : gestion des agents déployés via n8n et intégration du proxy LiteLLM.",
-      "CRM & Support : automatisation de la génération des propositions commerciales, gestion des clients/prospects, et mise en place d'un système de tickets pour les réclamations.",
-      "Sécurité & Accès : gestion des utilisateurs internes et externes avec une authentification centralisée sécurisée par Keycloak.",
+      "Abonnements & Facturation : gestion des abonnements et des paiements (Stripe, virement bancaire), avec facturation automatisée.",
+      "Système de crédits : crédit mensuel, crédits extras et rechargement automatique, avec intégration de LiteLLM pour le calcul et la déduction en temps réel de la consommation des agents IA.",
+      "CRM & Réclamations : gestion des propositions commerciales et suivi des réclamations clients (création, suivi, résolution).",
+      "Orchestration IA : gestion des agents déployés via n8n.",
     ],
-    tags: ["Spring Boot", "React", "Microservices", "Stripe", "n8n", "LiteLLM", "Keycloak", "PostgreSQL"],
+    tags: ["Java", "Spring Boot", "React", "Microservices", "Stripe", "n8n", "LiteLLM", "Keycloak", "PostgreSQL", "Docker", "GitLab CI/CD"],
   },
   {
     id: 2,
@@ -69,11 +69,13 @@ export default function Experience() {
   return (
     <section id="experience" className="py-16 md:py-28 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/5 to-transparent pointer-events-none" />
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 relative z-10">
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
+        <span className="text-foreground">
+          <span className="font-black text-[0.55em] align-middle mr-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
           {t("sections.experience")}
+          <span className="font-black text-[0.55em] align-middle ml-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
         </span>
       </h2>
 
@@ -82,7 +84,7 @@ export default function Experience() {
         <div className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-border/40" />
         {/* Line - draws in as you scroll */}
         <motion.div
-          className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 origin-top bg-gradient-to-b from-violet-400 to-fuchsia-500"
+          className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 origin-top bg-gradient-to-b from-[#6366F1] to-[#6366F1]"
           style={{ scaleY: lineProgress }}
         />
 
@@ -97,13 +99,13 @@ export default function Experience() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true, amount: 0.6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  className="absolute left-3 md:left-1/2 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-500 border-4 border-background shadow-lg shadow-violet-500/30 z-10"
+                  className="absolute left-3 md:left-1/2 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-[#6366F1] to-[#6366F1] border-4 border-background shadow-lg shadow-[#6366F1]/30 z-10"
                 >
                   {exp.current && (
                     <motion.span
                       animate={{ scale: [1, 1.8, 1], opacity: [0.7, 0, 0.7] }}
                       transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                      className="absolute inset-0 rounded-full bg-violet-400"
+                      className="absolute inset-0 rounded-full bg-[#7160ED]"
                     />
                   )}
                 </motion.div>
@@ -128,16 +130,16 @@ export default function Experience() {
                         <h3 className="text-lg font-bold text-foreground leading-tight">
                           {language === "fr" ? exp.roleFr : exp.roleEn}
                         </h3>
-                        <p className="text-sm font-semibold text-fuchsia-500 dark:text-fuchsia-400">
+                        <p className="text-sm font-semibold text-[#6366F1] dark:text-[#6366F1]">
                           {exp.company}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3 flex-wrap mb-3">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-400 bg-violet-500/10 border border-violet-500/20 rounded-full px-3 py-1">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#7160ED] bg-[#6366F1]/10 border border-[#6366F1]/20 rounded-full px-3 py-1">
                         {exp.current && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#7160ED] animate-pulse" />
                         )}
                         {language === "fr" ? exp.periodFr : exp.periodEn}
                       </span>
@@ -155,7 +157,7 @@ export default function Experience() {
                       <ul className="space-y-1.5 mb-4">
                         {(language === "fr" ? exp.bulletsFr : exp.bulletsEn).map((bullet, i) => (
                           <li key={i} className="text-xs text-muted-foreground leading-relaxed pl-3 relative">
-                            <span className="absolute left-0 top-1.5 w-1 h-1 rounded-full bg-violet-400" />
+                            <span className="absolute left-0 top-1.5 w-1 h-1 rounded-full bg-[#7160ED]" />
                             {bullet}
                           </li>
                         ))}
@@ -167,7 +169,7 @@ export default function Experience() {
                         <Badge
                           key={tag}
                           variant="secondary"
-                          className="bg-violet-500/10 text-violet-700 dark:text-violet-300 hover:bg-violet-500/20 border-violet-500/20 px-2 py-0.5 text-xs"
+                          className="bg-[#6366F1]/10 text-[#6366F1] dark:text-[#9F90E9] hover:bg-[#6366F1]/20 border-[#6366F1]/20 px-2 py-0.5 text-xs"
                         >
                           {tag}
                         </Badge>

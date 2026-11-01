@@ -30,58 +30,18 @@ export default function Header() {
     <header className="border-b border-border/50 bg-background/80 backdrop-blur-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex gap-0.5">
-          <span className="logo flex">
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0, x: '-19vw', y: '-10vw' } : {}}
-              animate={triggerAnimation ? { opacity: 1, x: 0, y: 0 } : {}}
-              transition={{ duration: 1, delay: 1.3 }}
-            >
-              O
-            </motion.span>
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0 } : {}}
-              animate={triggerAnimation ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0 }}
-            >
-              u
-            </motion.span>
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0 } : {}}
-              animate={triggerAnimation ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              s
-            </motion.span>
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0 } : {}}
-              animate={triggerAnimation ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
-              s
-            </motion.span>
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0 } : {}}
-              animate={triggerAnimation ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              a
-            </motion.span>
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0 } : {}}
-              animate={triggerAnimation ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
-              m
-            </motion.span>
-            <motion.span
-              initial={triggerAnimation ? { opacity: 0 } : {}}
-              animate={triggerAnimation ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 1 }}
-            >
-              a
-            </motion.span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <motion.span
+            initial={triggerAnimation ? { opacity: 0, scale: 0.8 } : {}}
+            animate={triggerAnimation ? { opacity: 1, scale: 1 } : {}}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex items-center gap-1 text-2xl font-bold"
+          >
+            <span className="font-black bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
+            <span className="text-foreground tracking-wide">OB</span>
+            <span className="font-black bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
+          </motion.span>
         </Link>
 
 

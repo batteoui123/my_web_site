@@ -14,12 +14,14 @@ const translations = {
     "nav.contact": "Contact",
 
     // Hero (intro section)
+    "hero.badge": "Web Developer",
     "hero.greeting": "Hello, I'm",
     "hero.rolePrefix": "And I'm a",
     "hero.tagline":
       "I build full-stack web experiences where clean code meets great design — from backend APIs to polished, DevOps-ready deployments.",
     "hero.role1": "Software Engineer",
     "hero.role2": "Web & Full-stack Developer",
+    "hero.techStack": "Core Technologies",
     "cta.contact": "Contact me",
     "cta.download": "Download CV",
 
@@ -54,10 +56,13 @@ const translations = {
 
     // Skills
     "skills.languages": "Programming Languages",
+    "skills.backend": "Backend & Microservices",
+    "skills.frontend": "Frontend",
     "skills.frameworks": "Frameworks & Libraries",
     "skills.databases": "Databases",
     "skills.tools": "Tools & Technologies",
     "skills.devops_tools": "DevOps & Tools",
+    "skills.architecture": "Architecture & Design",
     "skills.design_quality": "Design, Modeling & Quality",
 
     // Soft Skills
@@ -95,12 +100,14 @@ const translations = {
     "nav.contact": "Contact",
 
     // Hero (intro section)
+    "hero.badge": "Développeur Web",
     "hero.greeting": "Bonjour, je suis",
     "hero.rolePrefix": "Et je suis",
     "hero.tagline":
       "Je conçois des expériences web full-stack où code propre et bon design se rencontrent — des API backend aux déploiements prêts pour le DevOps.",
     "hero.role1": "Ingénieur Logiciel",
     "hero.role2": "Développeur Web & Full Stack",
+    "hero.techStack": "Technologies Clés",
     "cta.contact": "Contactez-moi",
     "cta.download": "Télécharger CV",
 
@@ -134,11 +141,14 @@ const translations = {
     "sections.contact": "Contact",
 
     // Skills
-    "skills.languages": "Langues de Programmation",
+    "skills.languages": "Langages de Programmation",
+    "skills.backend": "Backend & Microservices",
+    "skills.frontend": "Frontend",
     "skills.frameworks": "Frameworks & Bibliothèques",
     "skills.databases": "Bases de Données",
     "skills.tools": "Outils & Technologies",
     "skills.devops_tools": "DevOps & Outils",
+    "skills.architecture": "Architecture & Conception",
     "skills.design_quality": "Design, Modélisation & Qualité",
 
     // Soft Skills

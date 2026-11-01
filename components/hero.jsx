@@ -5,8 +5,17 @@ import { useTranslation } from "@/hooks/use-translation"
 import { Button } from "@/components/ui/button"
 import { Mail, Download, Linkedin, Github, Instagram, Facebook } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 import StarBackground from "./star-background"
+
+const techStack = [
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+  { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", className: "dark:invert" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+]
 
 export default function Hero() {
   /* Rotating Typewriter Logic */
@@ -97,7 +106,7 @@ export default function Hero() {
         >
           {/* Ambient Glow - follows the blob shape */}
           <motion.div
-            className="absolute w-56 h-56 md:w-72 md:h-72 translate-y-6 bg-violet-400 blur-[70px]"
+            className="absolute w-56 h-56 md:w-72 md:h-72 translate-y-6 bg-gradient-to-br from-[#6B49DE] to-[#273188] blur-[70px]"
             animate={{
               opacity: [0.35, 0.55, 0.35],
               borderRadius: [
@@ -111,7 +120,7 @@ export default function Hero() {
 
           {/* Single blob-shaped contour - outline only, glow does the coloring */}
           <motion.div
-            className="absolute w-56 h-56 md:w-72 md:h-72 -translate-x-2 translate-y-8 border-[3px] border-violet-400 shadow-[0_0_45px_5px_rgba(168,85,247,0.45)]"
+            className="absolute w-56 h-56 md:w-72 md:h-72 -translate-x-2 translate-y-8 border-[3px] border-[#6366F1] shadow-[0_0_45px_5px_rgba(99,102,241,0.45)]"
             animate={{
               borderRadius: [
                 "75% 25% 65% 35% / 35% 65% 35% 65%",
@@ -131,8 +140,31 @@ export default function Hero() {
               WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 96%)",
               maskImage: "linear-gradient(to bottom, black 60%, transparent 96%)",
             }}
-            className="relative z-10 w-48 md:w-60 h-auto object-contain drop-shadow-[0_20px_35px_rgba(139,92,246,0.45)] hover:scale-105 transition-transform duration-500"
+            className="relative z-10 w-48 md:w-60 h-auto object-contain drop-shadow-[0_20px_35px_rgba(99,102,241,0.45)] hover:scale-105 transition-transform duration-500"
           />
+
+          {/* Floating Code Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="hidden md:block absolute -right-6 lg:-right-10 bottom-2 z-20 w-56 rounded-xl border border-[#202332] bg-[#111828]/90 backdrop-blur-md shadow-2xl shadow-[#6366F1]/20 overflow-hidden"
+          >
+            <div className="flex items-center justify-between px-4 py-2 border-b border-[#202332]">
+              <span className="text-xs font-mono text-muted-foreground">{"</>"} Code</span>
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            </div>
+            <div className="p-4 font-mono text-[11px] leading-relaxed text-left whitespace-pre text-muted-foreground">
+              <p><span className="text-[#6366F1]">const</span> <span className="text-[#9F90E9]">developer</span> = {"{"}</p>
+              <p className="pl-3"><span className="text-sky-300">name</span>: <span className="text-orange-300">"Oussama"</span>,</p>
+              <p className="pl-3"><span className="text-sky-300">skills</span>: [<span className="text-orange-300">"Java"</span>, <span className="text-orange-300">"Spring"</span>,</p>
+              <p className="pl-6"><span className="text-orange-300">"React"</span>, <span className="text-orange-300">"Next.js"</span>],</p>
+              <p className="pl-3"><span className="text-sky-300">passion</span>: <span className="text-orange-300">"Building scalable</span></p>
+              <p className="pl-6"><span className="text-orange-300">web apps"</span></p>
+              <p>{"}"};</p>
+            </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 
@@ -154,8 +186,8 @@ export default function Hero() {
 
         <motion.div variants={itemVariants} className="text-lg md:text-xl font-semibold mb-6 flex flex-wrap items-center gap-2">
           <span className="text-foreground">{t("hero.rolePrefix")}</span>
-          <span className="text-violet-400">{text}</span>
-          <span className="text-violet-400 animate-pulse">|</span>
+          <span className="text-[#6366F1]">{text}</span>
+          <span className="text-[#6366F1] animate-pulse">|</span>
         </motion.div>
 
         {/* Tagline */}
@@ -175,7 +207,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full border-muted-foreground hover:border-violet-400 hover:text-violet-400 bg-transparent"
+                className="rounded-full border-muted-foreground hover:border-[#6366F1] hover:text-[#6366F1] bg-transparent"
                 asChild
               >
                 <a href={item.href} target="_blank" rel="noopener noreferrer">
@@ -187,9 +219,9 @@ export default function Hero() {
         </motion.div>
 
         {/* CTA Buttons */}
-        <motion.div variants={itemVariants} className="flex gap-3 flex-wrap">
+        <motion.div variants={itemVariants} className="flex gap-3 flex-wrap mb-8">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-violet-500 text-white hover:bg-violet-400 rounded-lg" asChild>
+            <Button className="bg-[#6366F1] text-white hover:bg-[#7160ED] rounded-lg" asChild>
               <a href="#contact">
                 <Mail className="h-4 w-4 mr-2" />
                 {t("cta.contact")}
@@ -199,7 +231,7 @@ export default function Hero() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               variant="outline"
-              className="border-violet-400/50 text-violet-400 hover:bg-violet-400/10 rounded-lg bg-transparent"
+              className="border-[#6366F1]/50 text-[#6366F1] hover:bg-[#6366F1]/10 rounded-lg bg-transparent"
               asChild
             >
               <a
@@ -212,6 +244,31 @@ export default function Hero() {
               </a>
             </Button>
           </motion.div>
+        </motion.div>
+
+        {/* Tech Stack */}
+        <motion.div variants={itemVariants}>
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#9F90E9] mb-3">
+            {t("hero.techStack")}
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            {techStack.map((tech) => (
+              <div
+                key={tech.name}
+                title={tech.name}
+                className="w-10 h-10 rounded-lg bg-white/5 border border-[#202332] flex items-center justify-center p-2 hover:border-[#6366F1]/50 hover:scale-110 transition-all duration-300"
+              >
+                <Image
+                  src={tech.icon}
+                  alt={tech.name}
+                  width={24}
+                  height={24}
+                  className={`object-contain ${tech.className || ""}`}
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
     </section>

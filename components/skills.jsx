@@ -15,27 +15,38 @@ const skillCategories = [
       { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
       { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
       { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
     ],
   },
   {
-    name: "frameworks",
-    titleKey: "skills.frameworks",
+    name: "backend",
+    titleKey: "skills.backend",
     items: [
+      { name: "Spring Boot / Security / Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+      { name: "Spring Data JPA", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" }, // Spring Data JPA fallback
+      { name: "API REST", icon: "https://api.iconify.design/dashicons/rest-api.svg", className: "dark:invert" },
+      { name: "OpenFeign", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" }, // OpenFeign fallback
+      { name: "RestClient", icon: "https://img.icons8.com/color/96/api-settings.png" },
+      { name: "Kafka", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg", className: "dark:invert" },
+      { name: "JEE", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" }, // JEE fallback
       { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
+    ],
+  },
+  {
+    name: "frontend",
+    titleKey: "skills.frontend",
+    items: [
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
       { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", className: "dark:invert" },
       { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
       { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
-      { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
-      { name: "JEE", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" }, // JEE fallback
-      { name: "JavaFX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" }, // JavaFX fallback
-      { name: "Three.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg", className: "dark:invert" },
     ],
   },
   {
     name: "databases",
     titleKey: "skills.databases",
     items: [
+      { name: "SQL", icon: "https://api.iconify.design/mdi/database.svg", className: "dark:invert" },
       { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
       { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
       { name: "Oracle (PL/SQL)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" },
@@ -49,35 +60,24 @@ const skillCategories = [
       { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
       { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg", className: "dark:invert" },
       { name: "GitHub Actions", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" },
-      { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+      { name: "GitLab CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" },
+      { name: "Docker / Docker Compose", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
       { name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" },
-      { name: "XML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xml/xml-original.svg" },
-      { name: "YAML", icon: "https://img.icons8.com/color/96/yaml.png" },
+      { name: "YAML", icon: "https://api.iconify.design/devicon/yaml.svg" },
       { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
-      { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" },
-
+      { name: "Jira", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
+      { name: "n8n", icon: "https://api.iconify.design/simple-icons/n8n.svg", className: "dark:invert" },
     ],
   },
   {
-    name: "design_quality", // New key
-    titleKey: "Design, Modeling & Quality",
+    name: "architecture",
+    titleKey: "skills.architecture",
     items: [
       { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
-      { name: "Canva", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" },
       { name: "Blender", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" },
       { name: "MERISE", icon: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-database-computer-programming-flaticons-lineal-color-flat-icons.png" }, // Generic DB design icon for MERISE
-      { name: "UML", icon: "https://img.icons8.com/color/96/uml.png" },
-      { name: "PHPUnit", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
-    ],
-  },
-  {
-    name: "spoken_languages",
-    titleKey: "Languages",
-    type: "circular",
-    items: [
-      { name: "French", icon: "https://flagcdn.com/w40/fr.png", percentage: 80 },
-      { name: "English", icon: "https://flagcdn.com/w40/gb.png", percentage: 50 },
-      { name: "Arabic", icon: "https://flagcdn.com/w40/ma.png", percentage: 100 },
+      { name: "UML", icon: "https://api.iconify.design/material-icon-theme/uml.svg" },
+      { name: "Microservices", icon: "https://api.iconify.design/carbon/microservices-1.svg", className: "dark:invert" },
     ],
   },
 ]
@@ -114,13 +114,15 @@ export default function Skills() {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold text-center mb-16"
       >
-        <span className="text-foreground dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-violet-400 dark:to-fuchsia-600">
+        <span className="text-foreground">
+          <span className="font-black text-[0.55em] align-middle mr-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
           {t("sections.skills")}
+          <span className="font-black text-[0.55em] align-middle ml-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
         </span>
       </motion.h2>
 
       <motion.div
-        className="bg-white/50 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-xl p-8 backdrop-blur-md hover:border-violet-400/30 transition-all shadow-xl dark:shadow-2xl"
+        className="bg-white/50 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-xl p-8 backdrop-blur-md hover:border-[#7160ED]/30 transition-all shadow-xl dark:shadow-2xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -138,7 +140,7 @@ export default function Skills() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-xl font-semibold text-violet-400 mb-6"
+                className="text-xl font-semibold text-[#7160ED] mb-6"
               >
                 {category.titleKey === "Languages" ? category.titleKey : (t(`skills.${category.name}`) || category.titleKey)}
               </motion.h3>
@@ -204,7 +206,7 @@ export default function Skills() {
                     ) : (
                       <>
                         <motion.div
-                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-violet-500/30 blur-[20px] rounded-full pointer-events-none"
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#6366F1]/30 blur-[20px] rounded-full pointer-events-none"
                           animate={{ opacity: [0.08, 0.28, 0.08] }}
                           transition={{
                             duration: 2.4 + (index % 5) * 0.35,
