@@ -4,7 +4,7 @@ import { useTranslation } from "@/hooks/use-translation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, Copy, Check } from "lucide-react"
 import { useState } from "react"
 
 export default function Contact() {
@@ -17,6 +17,13 @@ export default function Contact() {
   const [formDetails, setFormDetails] = useState(formInitialDetails)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [status, setStatus] = useState({})
+  const [copiedField, setCopiedField] = useState(null)
+
+  const handleCopy = (field, value) => {
+    navigator.clipboard.writeText(value)
+    setCopiedField(field)
+    setTimeout(() => setCopiedField(null), 2000)
+  }
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -101,9 +108,19 @@ export default function Contact() {
               <Mail className="h-6 w-6 text-[#7160ED] dark:text-[#7160ED] mt-1 flex-shrink-0" />
               <div>
                 <p className="text-sm text-muted-foreground">{t("contact.email")}</p>
-                <a href="mailto:oussama.batteoui.dev@gmail.com" className="text-[#7160ED] dark:text-[#7160ED] hover:text-[#6366F1] dark:hover:text-[#9F90E9]">
-                  oussama.batteoui.dev@gmail.com
-                </a>
+                <div className="flex items-center gap-2">
+                  <a href="mailto:oussama.batteoui.dev@gmail.com" className="text-[#7160ED] dark:text-[#7160ED] hover:text-[#6366F1] dark:hover:text-[#9F90E9]">
+                    oussama.batteoui.dev@gmail.com
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleCopy("email", "oussama.batteoui.dev@gmail.com")}
+                    aria-label="Copy email"
+                    className="text-muted-foreground hover:text-[#6366F1] transition-colors"
+                  >
+                    {copiedField === "email" ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -111,9 +128,19 @@ export default function Contact() {
               <Phone className="h-6 w-6 text-[#7160ED] dark:text-[#7160ED] mt-1 flex-shrink-0" />
               <div>
                 <p className="text-sm text-muted-foreground">{t("contact.phone")}</p>
-                <a href="tel:+212656465374" className="text-[#7160ED] dark:text-[#7160ED] hover:text-[#6366F1] dark:hover:text-[#9F90E9]">
-                  +212 6 56 46 53 74
-                </a>
+                <div className="flex items-center gap-2">
+                  <a href="tel:+212656465374" className="text-[#7160ED] dark:text-[#7160ED] hover:text-[#6366F1] dark:hover:text-[#9F90E9]">
+                    +212 6 56 46 53 74
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleCopy("phone", "+212 6 56 46 53 74")}
+                    aria-label="Copy phone number"
+                    className="text-muted-foreground hover:text-[#6366F1] transition-colors"
+                  >
+                    {copiedField === "phone" ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+                  </button>
+                </div>
               </div>
             </div>
 

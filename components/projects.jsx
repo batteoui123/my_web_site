@@ -150,13 +150,17 @@ export default function Projects() {
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/5 to-transparent pointer-events-none" />
 
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 relative z-10">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-3 relative z-10">
         <span className="text-foreground">
           <span className="font-black text-[0.55em] align-middle mr-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"<"}</span>
           {t("sections.projects")}
           <span className="font-black text-[0.55em] align-middle ml-[0.15em] bg-clip-text text-transparent bg-gradient-to-b from-[#7160ED] to-[#6366F1]">{"/>"}</span>
         </span>
       </h2>
+
+      <p className="text-center text-muted-foreground text-sm md:text-base mb-16 relative z-10">
+        {t("projects.subtitle")}
+      </p>
 
       {/* Soft Skills Banner */}
       <div className="max-w-6xl mx-auto mb-16 overflow-x-auto pb-4 md:pb-0">

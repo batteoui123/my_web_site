@@ -72,6 +72,7 @@ const translations = {
     "soft_skills.communication": "Communication",
 
     // Projects
+    "projects.subtitle": "Some of my projects",
     "projects.live": "Live",
     "projects.see_more": "See More",
     "projects.see_less": "See Less",
@@ -158,6 +159,7 @@ const translations = {
     "soft_skills.communication": "Communication",
 
     // Projects
+    "projects.subtitle": "Quelques-uns de mes projets",
     "projects.live": "Live",
     "projects.see_more": "Voir Plus",
     "projects.see_less": "Voir Moins",
